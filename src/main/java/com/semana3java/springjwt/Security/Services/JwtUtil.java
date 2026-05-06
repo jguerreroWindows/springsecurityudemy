@@ -30,7 +30,7 @@ public class JwtUtil {
         secretKey = Keys.hmacShaKeyFor(apiSecretBytes);
     }
 
-    public String generateToke(UserDetails userDetails){
+    public String generateToken(UserDetails userDetails){
         Map<String, Object> claims = new HashMap<>();
         return createToken(claims,userDetails.getUsername());
     }

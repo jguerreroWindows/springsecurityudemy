@@ -4,6 +4,7 @@ import com.semana3java.springjwt.Entity.Rol;
 import com.semana3java.springjwt.Entity.Usuario;
 import com.semana3java.springjwt.Security.Repository.RolRepository;
 import com.semana3java.springjwt.Security.Repository.UsuarioRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,10 +25,11 @@ public class UsuarioService {
         return usuarioRepository.findByUsername(username);
     }
 
+    @Transactional
     public Usuario guardarUsuario(Usuario usuario) {
         usuario.setUsername(usuario.getUsername());
         usuario.setRoles(usuario.getRoles());
-        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+        usuario.setPassword(usuario.getPassword());
 
         Usuario usuarioGuardado = usuarioRepository.save(usuario);
         for (Rol rol : usuario.getRoles()) {

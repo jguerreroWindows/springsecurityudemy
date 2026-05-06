@@ -43,8 +43,7 @@ public class RegistroRequest {
     @Override
     public String toString() {
         return "RegistroRequest{" +
-                "password='" + password + '\'' +
-                ", username='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", roles=" + roles +
                 '}';
     }

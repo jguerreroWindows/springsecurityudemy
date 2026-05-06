@@ -22,7 +22,10 @@ public class CustomUserDetails implements UserDetails {
     public CustomUserDetails(Usuario usuario) {
         this.username = usuario.getUsername();
         this.password = usuario.getPassword();
-        this.authorities = usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority("ROLE_"+rol.getNombre())).collect(Collectors.toSet());
+        this.authorities = usuario.getRoles()
+                .stream()
+                .map(rol -> new SimpleGrantedAuthority(rol.getNombre()))
+                .collect(Collectors.toSet());
     }
 
     @Override

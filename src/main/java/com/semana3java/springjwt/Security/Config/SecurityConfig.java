@@ -39,10 +39,6 @@ public class SecurityConfig {
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
-    @Bean
-    public UserDetailsService userDetailsService(){
-        return new UserDetailsServicesImp();
-    }
 
     @Bean
     public PasswordEncoder passwordEncoder(){

@@ -7,10 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringjwtApplication {
 
     public static void main(String[] args) {
-        SpringjwtApplication.run(SpringjwtApplication.class, args);
+        SpringApplication.run(SpringjwtApplication.class, args);
         System.out.println("Termino.....");
-
-
     }
 
 }
