@@ -4,35 +4,35 @@ import java.util.Objects;
 
 public class AuthResponse {
 
-    private String toker;
+    private String token;
 
     public AuthResponse(String toker) {
-        this.toker = toker;
+        this.token = toker;
     }
 
-    public String getToker() {
-        return toker;
+    public String getToken() {
+        return token;
     }
 
-    public void setToker(String toker) {
-        this.toker = toker;
+    public void setToken(String toker) {
+        this.token = toker;
     }
 
     @Override
     public String toString() {
         return "AuthResponse{" +
-                "toker='" + toker + '\'' +
+                "toker='" + token + '\'' +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof AuthResponse that)) return false;
-        return Objects.equals(toker, that.toker);
+        return Objects.equals(token, that.token);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(toker);
+        return Objects.hashCode(token);
     }
 }

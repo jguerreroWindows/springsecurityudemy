@@ -18,8 +18,7 @@ public class Usuario {
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuarios_roles",joinColumns = @JoinColumn(name = "usuario_id"),inverseJoinColumns = @JoinColumn(name = "rol_id"))
-    @Enumerated(EnumType.STRING)
+    @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
 
     public Usuario(String username, Set<Rol> roles, String password, Long id) {
@@ -69,7 +68,6 @@ public class Usuario {
         return "Usuario{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
                 ", roles=" + roles +
                 '}';
     }

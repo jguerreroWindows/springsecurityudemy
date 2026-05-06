@@ -31,8 +31,7 @@ public class AuthRequest {
     @Override
     public String toString() {
         return "AuthRequest{" +
-                "password='" + password + '\'' +
-                ", username='" + username + '\'' +
+                "username='" + username + '\'' +
                 '}';
     }
 
